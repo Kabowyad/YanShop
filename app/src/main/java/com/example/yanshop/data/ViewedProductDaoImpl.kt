@@ -47,16 +47,10 @@ class ViewedProductDaoImpl(
 
     fun save(product: Product) {
         val gson = Gson()
-        sharedPreferences.edit().putString("Product",  gson.toJson(product)).apply()
-    }
-
-    fun retrieveAll(): List<Product> {
-        val connectionsJSONString: String =
-            sharedPreferences.getString("Product", null).toString()
-        val type: Type = object : TypeToken<List<Product?>?>() {}.type
-        val connections: List<Product> =
-            Gson().fromJson<List<Product>>(connectionsJSONString, type)
-        return connections
+        val list = mutableListOf<Product>().apply {
+            add(product)
+        }
+        sharedPreferences.edit().putString("Product",  gson.toJson(list)).apply()
     }
 
     companion object {
