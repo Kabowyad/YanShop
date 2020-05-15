@@ -11,6 +11,9 @@ import com.example.yanshop.presenter.CatalogPresenter
 import com.example.yanshop.presenter.CatalogView
 import com.example.yanshop.ui.ProductInfoActivity.Companion.PRODUCT_TAG
 import kotlinx.android.synthetic.main.activity_catalog.*
+import kotlinx.android.synthetic.main.activity_catalog.toolbar
+import kotlinx.android.synthetic.main.activity_product_info.*
+import kotlinx.android.synthetic.main.toolbar_layout.view.*
 import moxy.ktx.moxyPresenter
 import javax.inject.Inject
 
@@ -29,6 +32,7 @@ class CatalogActivity : BaseActivity(), CatalogView {
         setContentView(R.layout.activity_catalog)
         setListeners()
         catalogRv.layoutManager = LinearLayoutManager(this)
+        toolbar.headerText.text = getString(R.string.headerCatalog)
         catalogRv.adapter = adapter
     }
 

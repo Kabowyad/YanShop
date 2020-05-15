@@ -4,7 +4,9 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.widget.EditText
+import com.example.yanshop.AfterTextChangedWatcher
 import com.example.yanshop.R
+import com.example.yanshop.domain.model.Basket
 import com.example.yanshop.presenter.OrderPresenter
 import com.example.yanshop.presenter.OrderView
 import kotlinx.android.synthetic.main.activity_order.*
@@ -22,6 +24,8 @@ class OrderActivity : BaseActivity(), OrderView {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_order)
+        val basket = intent?.getParcelableExtra(BASKET_TAG) ?: Basket(mutableListOf())
+        presenter.setBasket(basket)
         toolbar.headerText.text = getString(R.string.headerOrder)
         setListeners()
     }
@@ -32,36 +36,25 @@ class OrderActivity : BaseActivity(), OrderView {
     override fun showErrorPhoneNumber(visible: Boolean) = phoneField.showError(visible)
 
     private fun setListeners() {
-        nameFirstField.addTextChangedListener(object : TextWatcher {
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
-            override fun afterTextChanged(s: Editable?) {
-                presenter.setOrderFirstName(s.toString())
-            }
+        nameFirstField.addTextChangedListener(AfterTextChangedWatcher {
+            presenter.setOrderFirstName(it.toString())
         })
-        nameLastField.addTextChangedListener(object : TextWatcher {
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
-            override fun afterTextChanged(s: Editable?) {
-                presenter.setOrderLastName(s.toString())
-            }
+        nameLastField.addTextChangedListener(AfterTextChangedWatcher {
+            presenter.setOrderLastName(it.toString())
         })
-        nameFatherField.addTextChangedListener(object : TextWatcher {
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
-            override fun afterTextChanged(s: Editable?) {
-                presenter.setOrderFatherName(s.toString())
-            }
+        nameFatherField.addTextChangedListener(AfterTextChangedWatcher {
+            presenter.setOrderFatherName(it.toString())
         })
-        phoneField.addTextChangedListener(object : TextWatcher {
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
-            override fun afterTextChanged(s: Editable?) {
-                presenter.setOrderPhoneNumber(s.toString())
-            }
+        phoneField.addTextChangedListener(AfterTextChangedWatcher {
+            presenter.setOrderPhoneNumber(it.toString())
         })
         buttonOrderGoBack.setOnClickListener { finish() }
     }
+
+    companion object {
+        const val BASKET_TAG = "BASKET_TAG"
+    }
+
 }
 
 fun EditText.showError(visible: Boolean) {

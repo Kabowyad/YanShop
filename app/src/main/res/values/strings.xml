@@ -1,7 +1,7 @@
 <resources>
     <!-- Общие -->
-    <string name="app_name">МММ</string>
-    <string name="app_full_name">Мой маленький магазинчик</string>
+    <string name="app_name">Yan Shop</string>
+    <string name="app_full_name">Yan Shop</string>
     <string name="backward">ᐊ</string>
     <!-- Каталог --><string name="buttonBasket">Перейти в корзину</string>
     <string name="addProductToBasket">Добавить</string>
@@ -23,9 +23,8 @@
     <string name="nameLastField">Фамилия</string>
     <string name="nameFatherField">Отчество</string>
     <string name="phoneField">Номер телефона</string>
-    <string name="hintPhoneNumber">Пример: 8(+7)9999999999</string>
     <string name="orderAcceptButton">Принять заказ</string>
-    <string name="paymentCard">₿ Биткоины</string>
-    <string name="paymentCash">$ Кэш</string>
+    <string name="paymentCard">Безнал</string>
+    <string name="paymentCash">Наличкой</string>
     <string name="back_description">Назад</string>
 </resources>

@@ -11,7 +11,6 @@ import com.example.yanshop.R
 import com.example.yanshop.domain.model.Product
 import com.example.yanshop.presenter.format
 import kotlinx.android.extensions.LayoutContainer
-import kotlinx.android.synthetic.main.product_item.*
 import kotlinx.android.synthetic.main.product_item.productTvName
 import kotlinx.android.synthetic.main.product_item.productTvOldPrice
 import kotlinx.android.synthetic.main.product_item.productTvPrice

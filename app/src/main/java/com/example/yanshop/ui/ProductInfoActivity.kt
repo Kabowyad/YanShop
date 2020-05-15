@@ -6,7 +6,10 @@ import com.example.yanshop.R
 import com.example.yanshop.domain.model.Product
 import com.example.yanshop.presenter.ProductView
 import com.example.yanshop.presenter.format
+import kotlinx.android.synthetic.main.activity_order.*
 import kotlinx.android.synthetic.main.activity_product_info.*
+import kotlinx.android.synthetic.main.activity_product_info.toolbar
+import kotlinx.android.synthetic.main.toolbar_layout.view.*
 
 class ProductInfoActivity : BaseActivity(), ProductView {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -14,6 +17,7 @@ class ProductInfoActivity : BaseActivity(), ProductView {
         setContentView(R.layout.activity_product_info)
         val product = intent?.getParcelableExtra<Product>(PRODUCT_TAG) ?: return
         setProductInfoLayout(product)
+        toolbar.headerText.text = getString(R.string.headerProduct)
         setListeners()
     }
 

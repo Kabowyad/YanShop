@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#CFCFCF"
     tools:context=".ui.OrderActivity">
 
     <include
@@ -117,6 +118,7 @@
                     android:id="@+id/radioButton2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/fira_sans_light"
                     android:text="@string/paymentCash"
                     android:textAlignment="textStart" />
 
@@ -129,9 +131,10 @@
         android:id="@+id/buttonAcceptOrder"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@color/shadow"
+        android:background="#CFCFCF"
+        android:fontFamily="@font/fira_sans_light"
         android:text="@string/orderAcceptButton"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/shadow"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/buttonOrderGoBack" />
@@ -140,9 +143,10 @@
         android:id="@+id/buttonOrderGoBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/shadow"
+        android:background="#CFCFCF"
+        android:fontFamily="@font/fira_sans_light"
         android:text="@string/backward"
-        android:textColor="@color/white"
+        android:textColor="@color/shadow"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/buttonAcceptOrder"
         app:layout_constraintStart_toStartOf="parent" />
