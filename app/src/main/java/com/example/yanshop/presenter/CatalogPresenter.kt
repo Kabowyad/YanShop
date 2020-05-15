@@ -1,26 +1,34 @@
 package com.example.yanshop.presenter
 
-import com.example.yanshop.data.ViewedProductDaoImpl
+import com.example.yanshop.domain.BasketProductDao
 import com.example.yanshop.domain.MainApi
 import com.example.yanshop.domain.model.Product
 import kotlinx.coroutines.launch
 import moxy.InjectViewState
+import java.net.ConnectException
+import java.net.UnknownHostException
+import javax.inject.Inject
 
 @InjectViewState
-class CatalogPresenter(
+class CatalogPresenter @Inject constructor(
     private val api: MainApi,
-    private val dao: ViewedProductDaoImpl
+    private val basketProductDao: BasketProductDao
 ) : CoroutinePresenter<CatalogView>() {
-    var products = listOf(
-        Product("Applejack", 130.0),
-        Product("Pinkie Pie", 150.0, 20),
-        Product("Rarity", 115.0)
-    )
-
+    lateinit var products: List<Product>
 
     override fun onFirstViewAttach() {
         super.onFirstViewAttach()
-        launch {
+        launch { loadProducts() }
+    }
+
+    override fun attachView(view: CatalogView?) {
+        super.attachView(view)
+        if (!this::products.isInitialized)
+            launch { loadProducts() }
+    }
+
+    private suspend fun loadProducts() {
+        try {
             val remoteProducts = api.allProducts()
             products = remoteProducts.mapNotNull { r ->
                 try {
@@ -30,14 +38,15 @@ class CatalogPresenter(
                 }
             }
             viewState.setItems(products)
+        } catch (e: UnknownHostException) {
+            viewState.showServerError()
+        } catch (e: ConnectException) {
+            viewState.showInternetError()
         }
     }
 
-    public fun addProduct(product: Product) {
-        dao.addProduct(product.id.toLong())
-    }
-
-    public fun addObject(product: Product) {
-        dao.save(product)
+    fun addProductToBasket(product: Product) {
+        basketProductDao.addProduct(product)
+        viewState.showProductAdded()
     }
 }

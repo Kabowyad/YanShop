@@ -12,7 +12,7 @@ class Product(
     val discount: Int = 0,
     val description: String = "",
     val imageUrl: String? = null,
-    val id: String = nextId().toString()
+    val id: String
 ) : Parcelable {
     init {
         if (price < 0.0) throw VerifyError("Price must be positive")
@@ -21,9 +21,4 @@ class Product(
 
     @IgnoredOnParcel
     val discountPrice: Double = price * (1 - discount / 100.0)
-
-    companion object {
-        private var initialId = 0
-        fun nextId(): Int = initialId++
-    }
 }

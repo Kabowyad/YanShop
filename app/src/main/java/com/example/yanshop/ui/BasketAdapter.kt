@@ -14,7 +14,7 @@ import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.product_item.*
 
 class BasketAdapter(
-    private val onDelete: (string: String) -> Unit,
+    private val onDelete: (product: Product) -> Unit,
     private val openProductInfo: (product: Product) -> Unit
 ) : RecyclerView.Adapter<BasketAdapter.ViewHolder>() {
     private var products: List<Product> = listOf()
@@ -52,7 +52,7 @@ class BasketAdapter(
                 productTvPrice.text = format(product.price)
             }
             productTvName.setOnClickListener { openProductInfo(product) }
-            basketDeleteIb.setOnClickListener { onDelete(product.id) }
+            basketDeleteIb.setOnClickListener { onDelete(product) }
         }
     }
 }

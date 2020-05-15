@@ -8,4 +8,7 @@ import moxy.viewstate.strategy.StateStrategyType
 @StateStrategyType(AddToEndSingleStrategy::class)
 interface CatalogView : MvpView {
     fun setItems(products: List<Product>)
+    fun showInternetError()
+    fun showServerError()
+    fun showProductAdded()
 }

@@ -17,15 +17,15 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
-        <activity android:name="com.example.yanshop.ui.CatalogActivity">
+        <activity android:name=".ui.CatalogActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.yanshop.ui.BasketActivity" />
-        <activity android:name="com.example.yanshop.ui.OrderActivity" />
-        <activity android:name="com.example.yanshop.ui.ProductInfoActivity" />
+        <activity android:name=".ui.BasketActivity" />
+        <activity android:name=".ui.OrderActivity" />
+        <activity android:name=".ui.ProductInfoActivity" />
 
         <meta-data
             android:name="preloaded_fonts"

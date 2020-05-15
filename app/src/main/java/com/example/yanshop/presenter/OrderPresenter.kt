@@ -10,9 +10,9 @@ class OrderPresenter : BasePresenter<OrderView>() {
     private val order = Order()
     private val basket: Basket = Basket(
         mutableListOf(
-            Product("IPhone", 123.5, 30),
-            Product("Samsung", 85.5, 20),
-            Product("Xiomi", 50.5, 10)
+            Product("IPhone", 123.5, 30, id = "0"),
+            Product("Samsung", 85.5, 20, id = "0"),
+            Product("Xiomi", 50.5, 10, id = "0")
         )
     )
 
