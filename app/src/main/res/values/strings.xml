@@ -2,7 +2,7 @@
     <!-- Общие -->
     <string name="app_name">Yan Shop</string>
     <string name="app_full_name">Yan Shop</string>
-    <string name="backward">ᐊ</string>
+    <string name="backward">Back</string>
     <!-- Каталог --><string name="buttonBasket">Перейти в корзину</string>
     <string name="addProductToBasket">Добавить</string>
     <!-- Информация о товаре -->

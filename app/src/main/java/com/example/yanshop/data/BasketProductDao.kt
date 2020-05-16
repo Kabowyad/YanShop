@@ -1,4 +1,4 @@
-package com.example.yanshop.domain
+package com.example.yanshop.data
 
 import com.example.yanshop.domain.model.Product
 

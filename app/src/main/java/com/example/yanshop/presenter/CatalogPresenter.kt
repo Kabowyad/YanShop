@@ -1,6 +1,6 @@
 package com.example.yanshop.presenter
 
-import com.example.yanshop.domain.BasketProductDao
+import com.example.yanshop.data.BasketProductDao
 import com.example.yanshop.domain.MainApi
 import com.example.yanshop.domain.model.Product
 import kotlinx.coroutines.launch
@@ -32,7 +32,7 @@ class CatalogPresenter @Inject constructor(
             val remoteProducts = api.allProducts()
             products = remoteProducts.mapNotNull { r ->
                 try {
-                    Product(r.name, r.price, r.discount, r.description, r.imageUrl, r.id)
+                    Product(r.name, r.price, r.discountPercent, r.description, r.imageUrl, r.id)
                 } catch (e: VerifyError) {
                     null
                 }

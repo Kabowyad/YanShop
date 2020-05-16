@@ -1,6 +1,6 @@
 package com.example.yanshop.presenter
 
-import com.example.yanshop.domain.BasketProductDao
+import com.example.yanshop.data.BasketProductDao
 import com.example.yanshop.domain.model.Basket
 import com.example.yanshop.domain.model.Product
 import moxy.InjectViewState

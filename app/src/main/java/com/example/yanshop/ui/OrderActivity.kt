@@ -1,10 +1,8 @@
 package com.example.yanshop.ui
 
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import android.widget.EditText
-import com.example.yanshop.AfterTextChangedWatcher
+import com.example.yanshop.TextChangeListener
 import com.example.yanshop.R
 import com.example.yanshop.domain.model.Basket
 import com.example.yanshop.presenter.OrderPresenter
@@ -36,16 +34,16 @@ class OrderActivity : BaseActivity(), OrderView {
     override fun showErrorPhoneNumber(visible: Boolean) = phoneField.showError(visible)
 
     private fun setListeners() {
-        nameFirstField.addTextChangedListener(AfterTextChangedWatcher {
+        nameFirstField.addTextChangedListener(TextChangeListener {
             presenter.setOrderFirstName(it.toString())
         })
-        nameLastField.addTextChangedListener(AfterTextChangedWatcher {
+        nameLastField.addTextChangedListener(TextChangeListener {
             presenter.setOrderLastName(it.toString())
         })
-        nameFatherField.addTextChangedListener(AfterTextChangedWatcher {
+        nameFatherField.addTextChangedListener(TextChangeListener {
             presenter.setOrderFatherName(it.toString())
         })
-        phoneField.addTextChangedListener(AfterTextChangedWatcher {
+        phoneField.addTextChangedListener(TextChangeListener {
             presenter.setOrderPhoneNumber(it.toString())
         })
         buttonOrderGoBack.setOnClickListener { finish() }

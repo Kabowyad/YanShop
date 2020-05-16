@@ -1,12 +1,11 @@
 package com.example.yanshop.data
 
 import android.content.SharedPreferences
-import com.example.yanshop.domain.BasketProductDao
 import com.example.yanshop.domain.model.Product
 import com.google.gson.Gson
 import androidx.core.content.edit
 
-class SharedPreferencesBasketDao(
+class BasketProductDaoImpl(
     private val sharedPreferences: SharedPreferences
 ) : BasketProductDao {
 

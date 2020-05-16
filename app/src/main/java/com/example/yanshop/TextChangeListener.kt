@@ -3,7 +3,7 @@ package com.example.yanshop
 import android.text.Editable
 import android.text.TextWatcher
 
-class AfterTextChangedWatcher(
+class TextChangeListener(
     private val afterTextChangedAction: (Editable?) -> Unit
 ) : TextWatcher {
     override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}

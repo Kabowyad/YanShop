@@ -2,8 +2,8 @@ package com.example.yanshop.di.modules
 
 import android.content.Context
 import android.content.SharedPreferences
-import com.example.yanshop.data.SharedPreferencesBasketDao
-import com.example.yanshop.domain.BasketProductDao
+import com.example.yanshop.data.BasketProductDaoImpl
+import com.example.yanshop.data.BasketProductDao
 import dagger.Module
 import dagger.Provides
 
@@ -15,5 +15,5 @@ class PreferencesModule {
 
     @Provides
     fun provideBasketProduct(preferences: SharedPreferences): BasketProductDao =
-        SharedPreferencesBasketDao(preferences)
+        BasketProductDaoImpl(preferences)
 }
