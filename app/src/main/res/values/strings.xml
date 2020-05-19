@@ -1,30 +1,26 @@
 <resources>
-    <!-- Общие -->
     <string name="app_name">Yan Shop</string>
     <string name="app_full_name">Yan Shop</string>
     <string name="backward">Back</string>
-    <!-- Каталог --><string name="buttonBasket">Перейти в корзину</string>
-    <string name="addProductToBasket">Добавить</string>
-    <!-- Информация о товаре -->
-    <string name="headerProduct">Подробности</string>
-    <string name="productName">Название</string>
-    <string name="productPrice">Цена</string>
-    <string name="productDiscount">Скидка</string>
-    <string name="productPriceWithDiscount">Цена со скидкой</string>
-    <string name="productImageTitle">Изображение товара</string>
-    <!-- Информация о корзине -->
-    <string name="headerBasket">Корзина</string>
-    <string name="headerCatalog">Каталог</string>
-    <string name="buttonMakeOrder">Оформить заказ</string>
-    <string name="buttonDeleteItem">Удалить</string>
-    <!-- Оформление заказа -->
-    <string name="headerOrder">Оформление заказа</string>
-    <string name="nameFirstField">Имя</string>
-    <string name="nameLastField">Фамилия</string>
-    <string name="nameFatherField">Отчество</string>
-    <string name="phoneField">Номер телефона</string>
-    <string name="orderAcceptButton">Принять заказ</string>
-    <string name="paymentCard">Безнал</string>
-    <string name="paymentCash">Наличкой</string>
-    <string name="back_description">Назад</string>
+    <string name="buttonBasket">Go to basket</string>
+    <string name="addProductToBasket">Add</string>
+    <string name="headerProduct">Details</string>
+    <string name="productName">Title</string>
+    <string name="productPrice">Price</string>
+    <string name="productDiscount">Discount</string>
+    <string name="productPriceWithDiscount">Price with discount</string>
+    <string name="productImageTitle">Image</string>
+    <string name="headerBasket">Basket</string>
+    <string name="headerCatalog">Catalog</string>
+    <string name="buttonMakeOrder">Checkout</string>
+    <string name="buttonDeleteItem">Delete</string>
+    <string name="headerOrder">Checkout</string>
+    <string name="nameFirstField">Name</string>
+    <string name="nameLastField">Surname</string>
+    <string name="nameFatherField">Middle Name</string>
+    <string name="phoneField">Phone Number</string>
+    <string name="orderAcceptButton">Accept order</string>
+    <string name="paymentCard">Card</string>
+    <string name="paymentCash">Cash</string>
+    <string name="back_description">Back</string>
 </resources>
